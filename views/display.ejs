@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title><%= title %></title>      
+        <link rel="stylesheet" href="../../css/bootstrap.min.css" type="text/css" />
+        <link rel="stylesheet" href="../../css/style.css" type="text/css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <div class="container">
+        <header>
+            <%- include ('menu'); %>
+        </header>        
+        <main>
+                <div class="centrerat">
+                    <h2>Mina kurser</h2>
+                    <br/>
+                    <p id="message"><%= message %></p>
+                    <p>Kurser som jag har läst</p>
+                    <br/>
+                    <table id="displaytable">
+                        <tr>
+                            <th>Nr</th><th>Kod</th><th>Namn</th><th>Nivå</th><th>Poäng</th><th>Kursplan</th><th>Edit</th><th>Delete</th>
+                        </tr>                       
+                        <% courses.forEach(function(course){ %>
+                        <% if (course) { %>
+                        <tr><td><%= course.id %></td>
+                            <td><%= course.code %></td>
+                            <td><%= course.name %></td>
+                            <td><%= course.level %></td>
+                            <td><%= course.credits %></td>
+                            <td><a href="<%= course.syllabus %>" target="_blank"><b><%= course.name %></b></a></td>
+                            <td>
+                                <a class="editbtn" href="../../update/<%= course.id %>"> 
+                                    <i class="fa fa-edit" style="font-size:40px;color:green"></i>
+                                </a></td>                           
+                            <td>
+                                <a class="editbtn" href="../../delete/<%= course.id %>">
+                                    <i class="fa fa-trash-o" style="font-size:40px;color:red"></i>
+                                </a></td></tr>
+                        <% } %>
+                        <% }); %>                        
+                    </table>
+                    <br/>
+                </div>
+            </div>
+        </main>
+        <br/>
+        <div id="notes"></div>
+        <br/>
+    </body>
+</html>

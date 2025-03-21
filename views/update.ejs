@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title><%= title %></title>      
+        <link rel="stylesheet" href="../../css/bootstrap.min.css" type="text/css" />
+        <link rel="stylesheet" href="../../css/style.css" type="text/css" />
+    </head>
+    <body> 
+        <div class="container">
+            <header>
+                <%- include ('menu'); %>
+            </header>   
+            <main>     
+                <h1><%= title %></h1>
+                <br/>
+                <p>På denna sida kan Du uppdatera kurser i databasen.</p>
+                <p>Fyll i formuläret och klicka på knappen "Skicka".</p>
+
+                <% courses.forEach(function(course){ %>
+                <% if (course) { %>
+                <form method="post" action="../update/course">
+                    <div class="w-75 p-3">
+                        <label for="id" class="form-label">Nr</label> 
+                        <input type="text" class="form-control" id="id" name="id" value="<%= course.id %>" readonly="readonly" required>
+                    </div>
+                    <div class="w-75 p-3">
+                        <label for="code" class="form-label">Kurskod</label> 
+                        <input type="text" class="form-control" id="code" name="code" value="<%= course.code %>"  required>
+                    </div>
+                    <div class="w-75 p-3">
+                        <label for="name" class="form-label">Kursnamn</label> 
+                        <input type="text" class="form-control" id="name" name="name" value="<%= course.name %>" required>                   
+                    </div>
+                    <div class="w-75 p-3">
+                        <label for="syllabus" class="form-label">Länk till kursplan</label> 
+                        <input type="text" class="form-control" id="syllabus" name="syllabus" value="<%= course.syllabus %>" required>      
+                    </div>
+                    <div class="w-50 p-3">
+                        <label for="level" class="form-label">Kursens nivå</label>
+                        <select id="level" name="level" class="form-control w-25 p-2">
+                            <option value="A" <%= course.level  == 'A' ? 'selected' : ''%>>A</option>
+                            <option value="B" <%= course.level  == 'B' ? 'selected' : ''%>>B</option>
+                            <option value="C" <%= course.level  == 'C' ? 'selected' : ''%>>C</option>
+                            <option value="D" <%= course.level  == 'D' ? 'selected' : ''%>>D</option>
+                        </select>
+                    </div>
+                    <br/>
+                    <div class="form-control w-25 p-3">
+                        <label for="credits" class="form-label">Poäng</label> 
+                        <input type="number" class="form-control" id="credits" name="credits" min="2.0" max="30.0" step = "0.5" value="<%= course.credits %>" required>  
+                    </div>
+                    <br/>                
+                    <div class="mb-3">
+                        <button type="submit" class="btn btn-primary"> <b> Skicka </b> </button>
+                    </div>                
+                </form>
+                <% } %>
+                <% }); %>   
+            </main>
+        </div>  
+        <br/>
+        <div id="notes"></div>
+        <br/>
+    </body>
+</html>

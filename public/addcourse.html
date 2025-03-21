@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!--
+Larissa
+-->
+<html>
+    <head>
+        <title>Lägg till kurs</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
+        <link rel="stylesheet" href="css/style.css" type="text/css" />
+    </head>
+    <body>
+        <div class="container">
+            <nav class="navbar navbar-expand-sm bg-primary"> 
+                <div class="container-fluid">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link text-white" href="index.html"><b> Uppgift 1 </b></a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="/display/all"><b> Visa </b></a></li>
+                        <li class="nav-item"><a class="nav-link text-white active" href ="#"><b> Lägg till </b></a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href ="about.html"><b> Om oss </b></a></li>
+                    </ul>
+                </div>
+            </nav> 
+            <h1>Lägg till kurs</h1>
+            <br/>
+            <p>På denna sida kan Du lägga nya kurser i databasen.</p>
+            <p>Fyll i formuläret och klicka på knappen "Skicka".</p>
+            <br/>
+            <form method="post" action="add/course">
+                <div class="w-75 p-3">
+                    <label for="code" class="form-label">Kurskod</label> 
+                    <input type="text" class="form-control" id="code" name="code"  required>
+                </div>
+                <div class="w-75 p-3">
+                    <label for="name" class="form-label">Kursnamn</label> 
+                    <input type="text" class="form-control" id="name" name="name" required>                    
+                </div>
+                <div class="w-75 p-3">
+                    <label for="syllabus" class="form-label">Länk till kursplan</label> 
+                    <input type="text" class="form-control" id="syllabus" name="syllabus" required>     
+                </div>
+                <div class="w-50 p-3">
+                    <label for="level" class="form-label">Kursens nivå</label>
+                    <select id="level" name="level" class="form-control w-25 p-2">
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                    </select>
+                </div>
+                <br/>
+                <div class="form-control w-25 p-3">
+                    <label for="credits" class="form-label">Poäng</label> 
+                    <input type="number" class="form-control" id="credits" name="credits" min="2.0" max="30.0" step = "0.5" value="7.5" required>  
+                </div>
+                <br/>                
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-primary"> <b> Skicka </b> </button>
+                </div>                
+            </form>
+        </div>
+    </body>
+</html>

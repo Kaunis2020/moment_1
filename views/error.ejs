@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title><%= title %></title>
+        <link rel="stylesheet" href="../../css/bootstrap.min.css" type="text/css" />
+        <link rel="stylesheet" href="../../css/style.css">
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <%- include ('menu'); %>
+            </header>   
+            <h3 class='error'><%= title %></h3>
+            <p id="message"><%= message %></p>
+        </div>
+        <script src="js/ejs.min.js"></script>
+    </body>
+</html>

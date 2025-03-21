@@ -1,0 +1,40 @@
+/* 
+    Created on : 15 jan. 2025, 20:39:32
+    Author     : Larissa
+*/
+
+#displaytable{
+    width: 95%;
+    margin:auto;
+}
+
+#message{
+    color: red;
+    font-size: 22px;
+    font-weight: bolder;
+}
+
+.editbtn{
+    background-color: transparent;
+    border:none;
+    width:7%;
+}
+
+input:read-only {
+    background-color: #e5e4e2;
+    border: 0;
+}
+
+[readonly]:focus{
+    background-color: #e5e4e2;
+    border: 0;
+}
+
+nav{
+    margin-bottom:25px;
+}
+
+li.nav-item{
+    padding-right:40px;
+    font-size:20px;
+}

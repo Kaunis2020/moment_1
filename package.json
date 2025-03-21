@@ -1,0 +1,23 @@
+{
+    "name": "Moment1Server",
+    "version": "1.0.0",
+    "scripts": {
+        "start": "node ./bin/www"
+    },
+    "keywords": [
+        "util",
+        "functional",
+        "server",
+        "client",
+        "browser"
+    ],
+    "main": "main.js",
+    "author": "Larissa",
+    "contributors": [],
+    "dependencies": {
+        "ejs": "^3.1.10",
+        "express": "^4.21.2",
+        "nodemon": "^3.1.9",
+        "sqlite3": "^5.1.7"
+    }
+}

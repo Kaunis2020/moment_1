@@ -1,0 +1,18 @@
+CREATE TABLE courses(
+id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+code varchar(10) NOT NULL,
+name varchar(100) NOT NULL,
+syllabus text NOT NULL,
+level char(2) NOT NULL,
+credits REAL NOT NULL
+);
+
+INSERT INTO courses(code, name, syllabus, level, credits) VALUES('DT071G', 'Programmering i C#.NET', 'https://www.miun.se/utbildning/kursplaner-och-utbildningsplaner/DT071G/', 'A', 7.5);
+
+
+INSERT INTO courses(code, name, syllabus, level, credits) VALUES('DT060G', 'Objektorienterad programmering i C++', 'https://www.miun.se/utbildning/kursplaner-och-utbildningsplaner/DT060G/', 'B', 7.5);
+
+INSERT INTO courses(code, name, syllabus, level, credits) VALUES('DT187G', 'Java II', 'https://www.miun.se/utbildning/kursplaner-och-utbildningsplaner/DT187G/', 'A', 7.5);
+
+INSERT INTO courses(code, name, syllabus, level, credits) VALUES('DT015G', 'Examensarbete', 'https://www.miun.se/utbildning/kursplaner-och-utbildningsplaner/DT015G/', 'C', 15);
+
